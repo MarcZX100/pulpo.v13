@@ -1,0 +1,27 @@
+const Discord = require("discord.js");
+
+const guildModel = require("../models/guildModel");
+module.exports = evento => {
+
+const ex = evento
+
+  guildModel.findOne(
+    {
+      guildID: ex.guild.id
+    },
+
+    (err, res) => {
+   if(res.logs === "1") return;
+      if (err) console.log(err);
+      const embed = new Discord.MessageEmbed()
+      .setTitle("Ej Titulo")
+      .setDescription("Ej Desc.")
+      .addField("Antes:", evento.name)
+      .addField("Después:", evento.name)
+      .setColor(ex.guild.me.displayHexColor)
+      
+      
+ ex.client.channels.cache.get(res.logs).send(embed)
+      }
+  );
+};

@@ -1,0 +1,15 @@
+const { ShardingManager } = require('discord.js');
+const config = require('./config.json')
+
+const shardmanager = new ShardingManager('./bot.js', { //main dosyanızı yazın!
+	totalShards: 1, //Auto yazılabilir veya farklı bir sayı yazabilirsiniz.
+  token: config.token //Tokeninizi giriniz
+});
+shardmanager.spawn();
+
+shardmanager.on('shardCreate', shard => {
+    console.log(`Shard ${shard.id} creada!`);
+});
+
+//Discord.js v12 İçindir. 
+shardmanager.on('launch', shard => console.log(`- Spawned shard ${shard.id} -`)); // Optional

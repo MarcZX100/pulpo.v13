@@ -1,0 +1,31 @@
+const Discord = require("discord.js");
+// This event executes when a new guild (server) is joined.
+const guildModel = require("../models/guildModel");
+module.exports = async (oldEmoji, newEmoji) => {
+
+  const ex = oldEmoji
+  
+  guildModel.findOne(
+    {
+      guildID: ex.guild.id
+    },
+
+    (err, res) => {
+            if(res.logs === "1") return;
+      if (err) console.log(err);
+    //  if(channel.guild.id === client.channels.cache.get(res.logs).guild.id) {
+      const embed = new Discord.MessageEmbed()
+      .setTitle("Emoji Updated!")
+      .setDescription("An emote has been updated!")
+      .addField("After:", `:${oldEmoji.name}:`)
+      .addField("Before:", `:${newEmoji.name}:`)
+      .setThumbnail(ex.url)
+      .setColor(ex.guild.me.displayHexColor)
+      
+      
+ ex.client.channels.cache.get(res.logs).send(embed)
+      
+    }
+    
+  );
+};

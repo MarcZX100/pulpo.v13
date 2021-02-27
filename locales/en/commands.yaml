@@ -1,0 +1,14 @@
+ping_command: ":ping_pong: Pong! %{ping}ms"
+language_updated: Your language has been successfully updated
+emoji_not_found: "I couldn't find that emoji! Are you sure it's the right id or name?"
+emoji_created: "The %{e} emote was created!"
+help_embed_title: For more information about a command, use `help <command_name>` command
+help_permissions: Required Permissions
+help_name: Name
+help_aliases: Aliases
+help_usage: Usage
+help_not_found: "Command with name `%{command}` not found"
+not_found: Not Found
+help_uses: Times used
+channel_lock: The %{channel} channel was succesfully locked!
+channel_unlock: The %{channel} channel was succesfully unlocked!

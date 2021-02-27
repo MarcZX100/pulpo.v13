@@ -1,0 +1,30 @@
+const Discord = require("discord.js");
+
+const guildModel = require("../models/guildModel");
+module.exports = async message => {
+
+const ex = message
+
+  guildModel.findOne(
+    {
+      guildID: ex.guild.id
+    },
+
+    (err, res) => {
+            if(res.logs === "1") return;
+      if (err) console.log(err);
+    //  if(channel.guild.id === client.channels.cache.get(res.logs).guild.id) {
+      const embed = new Discord.MessageEmbed()
+      .setTitle("Message deleted")
+      .setDescription(`A message from ${ex.author} was deleted at ${ex.channel.name}`)
+      .addField("At channel:", ex.channel)
+      .addField("Content:", ex.content)
+      .setColor(ex.guild.me.displayHexColor)
+      
+      
+ ex.client.channels.cache.get(res.logs).send(embed)
+      }
+    
+    
+  );
+};

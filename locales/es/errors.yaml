@@ -1,0 +1,8 @@
+command_owner_only: Este comando es solo para el owner de el bot.
+not_enough_permission: Necesitas los permisos `%{permissions}` para usar este comando.
+command_guild_only: Este comando solo se puede usar en un servidor.
+specify_language: Especifica un lenguaje
+specify_valid_language: "Especifica un lenguaje. Lenguajes disponibles: `%{languages}`"
+command_disabled: El comando %{command} está desactivado para este servidor.
+wait_cooldown: "Debes esperar %{cooldown} segundos para usar el comando `%{command}` de nuevo"
+nsfw_only: "El comando %{command} solo se puede usar en canales NSFW!"

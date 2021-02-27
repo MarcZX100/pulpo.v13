@@ -1,0 +1,30 @@
+const Discord = require("discord.js");
+// This event executes when a new guild (server) is joined.
+const guildModel = require("../models/guildModel");
+module.exports = (guild, user) => {
+  // We need to add this guild to our settings!
+  // eslint-disable-line no-undef
+  const ex = user
+  guildModel.findOne(
+    {
+      guildID: ex.guild.id
+    },
+
+    (err, res) => {
+            if(res.logs === "1") return;
+      if (err) console.log(err);
+    //  if(channel.guild.id === client.channels.cache.get(res.logs).guild.id) {
+      const embed = new Discord.MessageEmbed()
+      .setTitle("Ban Removed!")
+      .setDescription("An user was unbanned:")
+      .addField("User:", ex.name)
+      .setColor(ex.guild.me.displayHexColor)
+      .serThumbnail(ex.url)
+      
+      
+ ex.client.channels.cache.get(res.logs).send(embed)
+      
+    }
+    
+  );
+};

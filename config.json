@@ -1,0 +1,20 @@
+{
+       "prefixes": [
+              "pp!",
+	            "<@758388900468883466>"
+        ],
+  "mongo_uri": "mongodb+srv://Marc:ZX10@cluster0.g7btz.mongodb.net/<dbname>?retryWrites=true&w=majority",
+  "yt_api_key": "AIzaSyDz0vNZKhzLZSo05wVcua74mp7uWjDQ2IY",
+  "owners": "506565592757698600",
+  "colors": {
+    "error": "#ff0000",
+    "general": "#3498DB",
+    "success": "#41FF70"
+  },
+  "members": {
+    "nath": "660240850260852806",
+    "candela": "689106697561702437",
+    "piedra": "336694894280310785",
+    "pulpo": "569155437279051776"
+  }
+}

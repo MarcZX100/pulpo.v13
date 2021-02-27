@@ -1,0 +1,34 @@
+const Discord = require("discord.js");
+const guildModel = require("../models/guildModel");
+const { util: { permissions } } = require('discord.js-commando');
+module.exports = role => {
+
+const ex = role
+
+  guildModel.findOne(
+    {
+      guildID: ex.guild.id
+    },
+
+    (err, res) => {
+            if(res.logs === "1") return;
+      if (err) console.log(err);
+
+            		const serialized = role.permissions.serialize();
+		const perms = Object.keys(permissions).filter(perm => serialized[perm]);
+            
+      const embed = new Discord.MessageEmbed()
+      .setTitle("Role Created:")
+      .setDescription("A new role was created!")
+      .addField("Role Name:", ex.name)
+      .addField("Role:", ex)
+      .addField("Color:", ex.color)
+      .addField("Permissions", perms.map(perm => permissions[perm]).join(', ') || 'None')
+      .setColor(ex.guild.me.displayHexColor)
+      
+      
+ ex.client.channels.cache.get(res.logs).send(embed)
+      
+    }
+  );
+};

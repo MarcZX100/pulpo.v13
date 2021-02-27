@@ -1,0 +1,41 @@
+const Discord = require("discord.js");
+const guildModel = require("../models/guildModel");
+const { util: { permissions } } = require('discord.js-commando');
+module.exports = (oldRole, newRole) => {
+
+const ex1 = oldRole
+const ex2 = newRole
+const client = ex1.client
+  guildModel.findOne(
+    {
+      guildID: ex2.guild.id
+    },
+
+    (err, res) => {
+            if(res.logs === "1") return;
+      if (err) console.log(err);
+
+            		const serialized1 = ex1.permissions.serialize();
+		const perms1 = Object.keys(permissions).filter(perm => serialized1[perm]);
+            
+            const serialized2 = ex2.permissions.serialize();
+		const perms2 = Object.keys(permissions).filter(perm => serialized2[perm]);
+            
+      const embed = new Discord.MessageEmbed()
+      .setTitle("Role Updated:")
+      .setDescription("A role was updated!")
+      .addField("Role Name Before:", ex1.name)
+      .addField("Role Name After:", ex2.name)
+      .addField("Color Before:", ex1.color)
+      .addField("Color After", ex2.color)
+      .addField("Permissions Before", perms1.map(perm => permissions[perm]).join(', ') || 'None')
+      .addField("Permissions After", perms2.map(perm => permissions[perm]).join(', ') || 'None')
+    
+      .setColor(ex1.guild.me.displayHexColor)
+      
+      
+ client.channels.cache.get(res.logs).send(embed)
+      }
+    
+  );
+};

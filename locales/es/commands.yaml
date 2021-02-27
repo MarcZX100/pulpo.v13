@@ -1,0 +1,13 @@
+ping_command: ":ping_pong: Pong! %{ping}ms"
+language_updated: Tu idioma se ha actualizado correctamente!
+emoji_not_found: "Yo no he podido encontrar ese emoji! Estas seguro de que el id está bien?"
+help_embed_title: Para más información de un comando, usa `help <nombre_comando>`.
+help_permissions: Permisos Requeridos
+help_name: Nombre
+help_aliases: Alias
+help_usage: Uso
+help_not_found: "Comando con el nombre `%{command}` no encontrado"
+not_found: No Encontrado
+help_uses: Veces usado
+channel_lock: El canal %{channel} ha sido bloqueado exitosamente!
+channel_unlock: El canal %{channel} ha sido desbloqueado exitosamente!

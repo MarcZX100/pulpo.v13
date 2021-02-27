@@ -1,7 +1,7 @@
 {
-  "name": "Pulposting(BETA)",
+  "name": "Pulposting",
   "description": "Nose",
-  "version": "0.0.1",
+  "version": "0.14.1",
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js"

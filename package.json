@@ -14,7 +14,7 @@
     "common-tags": "^1.8.0",
     "ytdl-core": "^4.4.0",
     "ffmpeg-static": "^4.2.7",
-    "opusscript": "0.0.7",
+    "opusscript": "0.0.8",
     "get-youtube-id": "^1.0.1",
     "ffmpeg": "^0.0.4",
     "megadb": "^3.4.0",

@@ -114,7 +114,7 @@ if (client.commands.has(cmd) || client.aliases.has(cmd)) {
       }
     }
     const cmd = args[0]
-    if(args[0] && !client.commands.has(cmd)) {
+    if(args[0] && (!client.commands.has(cmd) && !client.aliases.has(cmd))) {
       const commands = client.commands.filter(cmd => {
         if (cmd.ownerOnly) return false;
         if (cmd.module !== args[0].toLowerCase()) return false;

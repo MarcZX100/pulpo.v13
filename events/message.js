@@ -22,7 +22,7 @@ let language = "en"}*/
     if (message.content.startsWith(message.client.config.prefixes[i]))
       prefix = message.client.config.prefixes[i];
   }
-  if (!message.content.startsWith(prefix)) return;
+  if (!message.content.toLowerCase().startsWith(prefix)) return;
   if (message.guild) {
     if (!message.guild.language && message.guild) {
       let language = "en";
@@ -37,7 +37,7 @@ let language = "en"}*/
       let language = "en";
     }
   }
-  const args = message.content.slice(prefix.length).split(" ");
+  const args = message.content.toLowerCase().slice(prefix.length).split(" ");
   let command = args.shift();
 
   if (message.client.commands.has(command))

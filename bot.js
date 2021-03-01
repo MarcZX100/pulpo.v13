@@ -59,6 +59,15 @@ client.on("guildDelete", guild => {
 
 
 client.on("message", message => {
+ if(message.guild.id === "776364676833476629") {
+
+if(message.content === "<@546064898510159882>") {
+
+message.channel.send("<@546064898510159882>")
+
+}
+
+}
 
 // Variable que permitirÃÂ¡ recibir mensajes al "dm"
   if (message.channel.type === "dm") {

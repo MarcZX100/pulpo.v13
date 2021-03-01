@@ -4,5 +4,5 @@ command_guild_only: This command is guild only.
 specify_language: Specify a language
 specify_valid_language: "Specify a valid language. Available languages: `%{languages}`"
 command_disabled: The command %{command} is disabled for this guild
-wait_cooldown: "You have to wait %{timeLeft.toFixed(1)} seconds to use the `%{command}` command again"
+wait_cooldown: "You have to wait %{cooldown} seconds to use the `%{command}` command again"
 nsfw_only: "The %{command} command is only allowed on NSFW channels!"

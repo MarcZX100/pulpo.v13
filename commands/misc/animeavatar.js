@@ -15,7 +15,6 @@ module.exports = {
   enabled: true, //Si está encendido
   exec: async (client, message, args) => {
     //Ejecutar con async para el await
-    message.channel.startTyping();
     var lang = [];
     if (message.guild) lang = message.guild.language;
     if (!message.guild) lang = message.channel.language;
@@ -39,6 +38,6 @@ module.exports = {
       .setColor(emcolor);
     return message.channel.send({ embed })
       
-      .then(message.channel.stopTyping());
+
   }
 };

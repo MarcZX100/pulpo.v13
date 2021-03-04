@@ -59,15 +59,6 @@ client.on("guildDelete", guild => {
 
 
 client.on("message", message => {
- if(message.guild.id === "776364676833476629") {
-
-if(message.content === "<@546064898510159882>") {
-
-message.channel.send("<@546064898510159882>")
-
-}
-
-}
 
 // Variable que permitirÃÂ¡ recibir mensajes al "dm"
   if (message.channel.type === "dm") {
@@ -115,6 +106,7 @@ client.on("message", message => {
 	      if (message.content.includes('298333637265588225')) { 
 	message.channel.send("Para la mayoria, un Tomy más. Para mi, mi mejor admin."); //timi
 	      }
+	
 	if (message.content.includes('318841899601362967')) { 
 		message.channel.send("Te están llamando maldito inutil (Jajashd naaa bro te tkm mucho uwu)"); 
 	}
@@ -144,8 +136,8 @@ client.on("message", message => {
 }       
 
 	
-     if (message.author.id == 689106697561702437) {
-	     message.react('790644057734119484')
+     if (message.content.includes === "689106697561702437") {
+	     message.react('816938240849477652')
 }
 
 

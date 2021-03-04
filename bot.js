@@ -111,7 +111,7 @@ client.on("message", message => {
 		message.channel.send("Te están llamando maldito inutil (Jajashd naaa bro te tkm mucho uwu)"); 
 	}
      if (message.content.includes('potato')) {
-        message.react('762245669901565962'); //Yo
+        message.react('788896686415413278'); //Yo
 }       	  
      if (message.content.includes('553662317280362507')) {
          message.channel.send("Para algunos una persona. Para mi, mi primera experiencia con una verdadera chica gamer :pray::pray:"); 
@@ -136,7 +136,7 @@ client.on("message", message => {
 }       
 
 	
-     if (message.content.includes === "689106697561702437") {
+     if (message.content.includes('689106697561702437')) {
 	     message.react('816938240849477652')
 }
 

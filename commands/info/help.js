@@ -78,6 +78,7 @@ if (client.commands.has(cmd) || client.aliases.has(cmd)) {
                 ),
                 command.name
               )
+              .addField("Cooldown", command.cooldown + "s")
               .addField(
                 client.i18n.get(
                   message.guild.language,

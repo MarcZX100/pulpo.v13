@@ -1,4 +1,5 @@
 const { Schema, model } = require("mongoose");
+const config = require('./../config.json');
 
 const guildSchema = Schema({
     guildID: {
@@ -8,7 +9,7 @@ const guildSchema = Schema({
     prefix: {
       type: String,
       required: true,
-      default: config.prefix
+      default: config.prefixes[0]
     },
     language: {
         type: String,

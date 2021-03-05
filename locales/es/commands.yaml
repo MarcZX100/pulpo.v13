@@ -1,6 +1,7 @@
 ping_command: ":ping_pong: Pong! %{ping}ms"
 language_updated: Tu idioma se ha actualizado correctamente!
 emoji_not_found: "Yo no he podido encontrar ese emoji! Estas seguro de que el id está bien?"
+emoji_created: "El emoji %{e} ha sido creado!"
 help_embed_title: Para más información de un comando, usa `help <nombre_comando>`.
 help_permissions: Permisos Requeridos
 help_name: Nombre

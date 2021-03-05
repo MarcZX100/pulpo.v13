@@ -5,6 +5,11 @@ const guildSchema = Schema({
         type: String,
         required: true
     },
+    prefix: {
+      type: String,
+      required: true,
+      default: config.prefix
+    },
     language: {
         type: String,
         required: true,

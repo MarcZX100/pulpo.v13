@@ -14,7 +14,12 @@ module.exports = async message => {
       const msg = message;
         if(msg.author.bot || !msg.guild) return;
 
-        let prefix = bot.config.prefixes[0]
+        
+              let guildDocument = await guildModel.findOne({
+        guildID: message.guild.id
+      });
+        let prefix = !guildDocument.prefix ? bot.config.prefixes[0] : guildDocument.prefix;
+        
         let argsSlice = prefix.length;
 
         if(!msg.content.toLowerCase().startsWith(prefix.toLowerCase())) {

@@ -93,6 +93,10 @@ client.on("message", message => {
 	if (message.content === "que") {
 		message.channel.send('so')
 	}
+if(message.guild.id === "792958112717471775") {
+if(message.content.toLowerCase().includes("todo mal")) {
+message.react("🤣");
+}} //sape world
 
     	if (message.content.startsWith("but")) {
 		message.channel.send("Ooooh mis lentes de contactoo"); 

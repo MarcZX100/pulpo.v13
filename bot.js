@@ -138,6 +138,9 @@ message.react("🤣");
      if (message.content.includes('587319206911934464')) {
         message.channel.send('gei');//Kaki
 }       
+     if (message.content.includes('316363985785978881')) {
+        message.react('818764364008914945');//lukitas
+}
 
 	
      if (message.content.includes('689106697561702437')) {

@@ -169,7 +169,8 @@ if (message.guild) {
         }
 
 
-        cmdFile.exec(bot, msg, args);
+message.channel.startTyping()
+        cmdFile.exec(bot, msg, args).then(message.channel.stopTyping());
     } catch(err) {
         console.log('Command execution error - ' + err);
     }

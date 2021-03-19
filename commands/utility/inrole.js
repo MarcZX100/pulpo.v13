@@ -26,7 +26,7 @@ const role = message.guild.roles.cache.find(x => x.name === args.join(" ")) || m
        
     const mbr = role.members.filter((x) => x.user.tag !== message.guild.id).map((x) => `${x.user.tag}`)/////We filter the members with the role so that we know their tag :D
 
-    const listaRoles = mbr.length > 30 ? `${mbr.slice(0, 30).join('\n')}\nand ${mbr.length - 30} more members` : mbr.join(', ');/////Now, with what we filter. If the members with the role are more than 15 it will say how many more members have the role. This to avoid future problems
+    const listaRoles = mbr.length > 50 ? `${mbr.slice(0, 50).join(', ')}\nand ${mbr.length - 50} more members` : mbr.join(', ');/////Now, with what we filter. If the members with the role are more than 15 it will say how many more members have the role. This to avoid future problems
 
 
     const embedInRole = new Discord.MessageEmbed()///////We create an embed (Optional)

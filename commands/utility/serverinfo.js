@@ -9,12 +9,7 @@ module.exports = {
 	guildOnly: true,
 	enabled: true,
   exec: async (client, message, args) => {
-		
-                var emcolor = [0]
-    if (message.guild) emcolor = message.guild.me.displayHexColor
-      
-    if (!message.guild) emcolor = client.config.colors.general
-    
+
          function checkDays(date) {
          let now = new Date();
          let diff = now.getTime() - date.getTime();
@@ -52,7 +47,7 @@ module.exports = {
      
          //create an embed with information about the server and send it to the channel
       let embed = new MessageEmbed()
-      .setColor(emcolor)
+      .setColor(client.color)
       .setTitle("Server Info")
       .setThumbnail(message.guild.iconURL())
       .setAuthor(`${message.guild.name}`, message.guild.iconURL())

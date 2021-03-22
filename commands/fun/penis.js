@@ -15,7 +15,7 @@ module.exports = {
     var fact = Math.floor(Math.random() * facts.length);
 
 message.channel.send({embed: {
-      color: emcolor,
+      color: client.color,
      
       title: `*${message.author.username}\'s penis O.o*`,
       fields: [{

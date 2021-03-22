@@ -10,11 +10,6 @@ module.exports = {
   enabled: true,
   exec: async (client, message, args) => {
   
-                var emcolor = [0]
-    if (message.guild) emcolor = message.guild.me.displayHexColor
-      
-    if (!message.guild) emcolor = client.config.colors.general
-    
   function checkDays(date) {
         let now = new Date();
         let diff = now.getTime() - date.getTime();
@@ -31,7 +26,7 @@ if (!args) return message.reply("you must enter an emoji!")
 		if (!emoji.animated) animated = "No"
 
 		let embed = new Discord.MessageEmbed()
-		.setColor(emcolor)
+		.setColor(client.color)
 		.setThumbnail(emoji.url)
     .setTitle("**EMOJI INFO**")
 		.addField(`Emoji Name`, `\`${emoji.name}\``)

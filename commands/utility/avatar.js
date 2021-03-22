@@ -10,15 +10,11 @@ module.exports = {
     
 	const Discord = require('discord.js');	
 		
-                var emcolor = [0]
-    if (message.guild) emcolor = message.guild.me.displayHexColor
-      
-    if (!message.guild) emcolor = client.config.colors.general
   let persona = message.mentions.members.first() || message.guild.members.cache.find(x => x.id == args[0]) || message.member;//Sino menciono a naadie
 
 
 message.channel.send({embed: {
-  color: emcolor,
+  color: client.color,
  author: {
     name: persona.user.tag,
    icon_url: persona.user.avatarURL({ format: 'png', dynamic: true, size: 2048 })

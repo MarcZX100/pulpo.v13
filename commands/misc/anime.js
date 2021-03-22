@@ -13,14 +13,9 @@ module.exports = { //Lo exporta a el bot.js con el message.js
   permissions: [], //Permisos necesarios para ejecutar el comando
   enabled: true, //Si está encendido
   exec: async (client, message, args) => { //Ejecutar con async para el await
-    message.channel.startTyping()
     var lang = [];
     if (message.guild) lang = message.guild.language;
-    if (!message.guild) lang = message.channel.language;
-    var emcolor = [0];
-    if (message.guild) emcolor = message.guild.me.displayHexColor;
-    if (!message.guild) emcolor = client.config.colors.general;
-    
+    if (!message.guild) lang = message.channel.language;  
         if(!args.length) return message.channel.send("Baka! What Anime should I search?");
     let [title, page = "1"] = args.join(" ").split(", ");
     // page = page.verifyInt(page, 1);
@@ -42,11 +37,9 @@ module.exports = { //Lo exporta a el bot.js con el message.js
       .setThumbnail(res.attributes.posterImage && res.attributes.posterImage.original)
       .setURL(`https://kitsu.io/anime/${res.id}`)
       .setFooter(`Page ${page}/${data.length}`)
-      .setColor(emcolor)
+      .setColor(client.color)
       .setAuthor(message.author.tag, message.author.displayAvatarURL({ size: 64 }));
 
     message.channel.send({ embed })
-    
-    message.channel.stopTyping()
   }
 };

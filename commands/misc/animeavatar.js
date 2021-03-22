@@ -18,9 +18,6 @@ module.exports = {
     var lang = [];
     if (message.guild) lang = message.guild.language;
     if (!message.guild) lang = message.channel.language;
-    var emcolor = [0];
-    if (message.guild) emcolor = message.guild.me.displayHexColor;
-    if (!message.guild) emcolor = client.config.colors.general;
 
     const { url } = await fetch(
       `https://nekos.life/api/v2/img/${
@@ -35,7 +32,7 @@ module.exports = {
         `Requested by: ${message.author.tag} | Powered by nekos.life`,
         message.author.displayAvatarURL({ size: 32 })
       )
-      .setColor(emcolor);
+      .setColor(client.color);
     return message.channel.send({ embed })
       
 

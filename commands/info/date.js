@@ -13,14 +13,9 @@ module.exports = {
   exec: async (client, message, args) => {
 const dmyhms = moment.utc(new Date()).format('dddd, DD/MM/YY h:mm:ss')
 
-        var emcolor = [0]
-    if (message.guild) emcolor = message.guild.me.displayHexColor
-      
-    if (!message.guild) emcolor = client.config.colors.general
-
 const inv = new Discord.MessageEmbed()
 .setTitle("Here you have the actual hour!")
-.setColor(emcolor)
+.setColor(client.color)
 .setDescription(dmyhms)
 .setFooter(`Requested by ${message.author.tag}`)
 

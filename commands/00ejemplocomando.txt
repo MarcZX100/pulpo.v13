@@ -16,9 +16,6 @@ module.exports = { //Lo exporta a el bot.js con el message.js
     var lang = [];
     if (message.guild) lang = message.guild.language;
     if (!message.guild) lang = message.channel.language;
-    var emcolor = [0];
-    if (message.guild) emcolor = message.guild.me.displayHexColor;
-    if (!message.guild) emcolor = client.config.colors.general;
     
     
     

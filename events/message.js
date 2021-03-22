@@ -11,6 +11,8 @@ var lang = ""
 module.exports = async message => {
     try {
       const bot = message.client;
+    const emcolor = require('../modules/emcolor.js');
+    bot.color = emcolor.color(message)
       const msg = message;
         if(msg.author.bot || !msg.guild) return;
 

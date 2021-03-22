@@ -8,11 +8,7 @@ module.exports = {
 	enabled: true,
   exec: async (client, message, args) => {
 
-                var emcolor = [0]
-    if (message.guild) emcolor = message.guild.me.displayHexColor
-      
-    if (!message.guild) emcolor = client.config.colors.general
-    
+
 let rolemap = message.guild.roles.cache
             .map(roles => `\<@&${roles.id}\>`)
             .join(" | ");
@@ -21,7 +17,7 @@ let rolemap = message.guild.roles.cache
 		
 if (rolemap.length < 2048) {
    message.channel.send({embed: {
-      color: emcolor,
+      color: client.color,
      
       title: `List of the roles of this server`,
       description: rolemap,
@@ -31,7 +27,7 @@ if (rolemap.length < 2048) {
 }
       if (rolemap.length > 2048) {
    message.channel.send({embed: {
-      color: emcolor,
+      color: client.color,
      
       title: `List of the roles of this server`,
       description: rolemap.slice(0, 2048)
@@ -39,7 +35,7 @@ if (rolemap.length < 2048) {
    );
         
    message.channel.send({embed: {
-      color: emcolor,
+      color: client.colorp,
      
       description: rolemap.slice(2048, rolemap.length),
       timestamp: new Date()

@@ -22,7 +22,7 @@ module.exports = {
                 const embed2 = new MessageEmbed()
     if (!args[0]) {
      const embed1 = new MessageEmbed()
-                .setColor(emcolor)
+                .setColor(client.color)
                 .setDescription(client.i18n.get(lang, "commands", "help_embed_title"))
                 .setTimestamp(new Date())
           
@@ -58,7 +58,7 @@ if (client.commands.has(cmd) || client.aliases.has(cmd)) {
             if (err) console.log(err);
               embed2.setTitle(command.name)
               .setDescription(command.description)
-              .setColor(emcolor)
+              .setColor(client.color)
               .addField(
                 client.i18n.get(
                   message.guild.language,
@@ -131,7 +131,7 @@ if (client.commands.has(cmd) || client.aliases.has(cmd)) {
       const embed3 = new MessageEmbed();
       for (let category in help) {
         embed3
-          .setColor(emcolor)
+          .setColor(client.color)
           .setDescription(client.i18n.get(lang, "commands", "help_embed_title"))
           .setTimestamp(new Date())
           .addField(

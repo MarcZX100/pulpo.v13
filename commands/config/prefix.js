@@ -16,10 +16,7 @@ module.exports = { //Lo exporta a el bot.js con el message.js
     var lang = [];
     if (message.guild) lang = message.guild.language;
     if (!message.guild) lang = message.channel.language;
-    var emcolor = [0];
-    if (message.guild) emcolor = message.guild.me.displayHexColor;
-    if (!message.guild) emcolor = client.config.colors.general;
-    
+
           let guildDocument = await guildModel.findOne({
         guildID: message.guild.id
       });
@@ -29,14 +26,14 @@ module.exports = { //Lo exporta a el bot.js con el message.js
     let newPrefix = args.join(' ');
     if(!newPrefix.length) {
         let embed = new Discord.MessageEmbed()
-            .setColor(emcolor)
+            .setColor(client.color)
             .setDescription('My prefix for this guild is `' + prefix + '`')
         return message.channel.send(embed);
     }
 
     if(newPrefix.length > 7) {
         let embed = new Discord.MessageEmbed()
-            .setColor(emcolor)
+            .setColor(client.color)
             .setDescription('Prefix shouldn\'t be longer than 7 characters. Yours has ' + newPrefix.length + '.')
         return message.channel.send(embed);
     }
@@ -45,7 +42,7 @@ module.exports = { //Lo exporta a el bot.js con el message.js
     await guildDocument.save();
 
     let embed = new Discord.MessageEmbed()
-        .setColor(emcolor)
+        .setColor(client.color)
         .setDescription('Prefix changed to `' + newPrefix + '`. If you ever forget it just tag me.')
     return message.channel.send(embed);
 

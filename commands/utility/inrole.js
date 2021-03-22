@@ -15,10 +15,7 @@ module.exports = { //Lo exporta a el bot.js con el message.js
     var lang = [];
     if (message.guild) lang = message.guild.language;
     if (!message.guild) lang = message.channel.language;
-    var emcolor = [0];
-    if (message.guild) emcolor = message.guild.me.displayHexColor;
-    if (!message.guild) emcolor = client.config.colors.general;
-    
+ 
         if (!args[0]) return message.channel.send("You must add some args!");//////If you do not mention or put a valid ID we make it return.
 const role = message.guild.roles.cache.find(x => x.name === args.join(" ")) || message.guild.roles.cache.find(x => x.id == args[0]) || message.mentions.roles.first();
 
@@ -32,7 +29,7 @@ const role = message.guild.roles.cache.find(x => x.name === args.join(" ")) || m
     const embedInRole = new Discord.MessageEmbed()///////We create an embed (Optional)
         .setTitle(`Members with the role:\n\`${role.name}\` - \`${role.members.size}\``)//////A title that says the role and the number of members with the role
         .setDescription(listaRoles)///////Members with the role. Only 25 or less will come out.
-        .setColor(emcolor)////The color of the emebd, this returns a hexadecimal color, if it has a color it will be #000000
+        .setColor(client.color)////The color of the emebd, this returns a hexadecimal color, if it has a color it will be #000000
         message.channel.send(embedInRole)////Send a embed.
   }
 };

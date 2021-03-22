@@ -11,12 +11,7 @@ module.exports = {
   nsfwOnly: false,
   enabled: true,
   exec: async (client, message, args) => {
-    
-          var emcolor = [0]
-    if (message.guild) emcolor = message.guild.me.displayHexColor
-      
-    if (!message.guild) emcolor = client.config.colors.general
-    
+
       let days = Math.floor(message.client.uptime / 86400000);
       let hours = Math.floor(message.client.uptime / 3600000) % 24;
       let minutes = Math.floor(message.client.uptime / 60000) % 60;
@@ -59,7 +54,7 @@ maxcmd.then((cmd) => {
  .addField("Most Used Command", `${cmd.command.charAt(0).toUpperCase() + cmd.command.slice(1)} used ${nu.max()} times`)
  .setThumbnail(client.user.avatarURL())
  .setTimestamp(new Date())
- .setColor(emcolor)
+ .setColor(client.color)
     
 message.channel.send(embed)
 })

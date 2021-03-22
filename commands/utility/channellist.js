@@ -8,11 +8,6 @@ module.exports = {
 	enabled: true,
   exec: async (client, message, args) => {
 
-                var emcolor = [0]
-    if (message.guild) emcolor = message.guild.me.displayHexColor
-      
-    if (!message.guild) emcolor = client.config.colors.general
-    
    const lepush = (q,c) => {
   if(c.type=="text") q.push(`#️⃣ ${c.name}`)
   else if(c.type=="voice") q.push(`🔊 ${c.name}`)
@@ -34,7 +29,7 @@ categorias.forEach(c=>{
 		
 if (canales.length > 2048)    
    message.channel.send({embed: {
-      color: emcolor,
+      color: client.color,
      
       title: `List of the channels of this server`,
       description: canales.join("\n"),
@@ -43,7 +38,7 @@ if (canales.length > 2048)
    );
       if (canales.length < 2048) {
    message.channel.send({embed: {
-      color: emcolor,
+      color: client.color,
      
       title: `List of the channels of this server`,
       description: canales.join("\n").slice(0, 2048)

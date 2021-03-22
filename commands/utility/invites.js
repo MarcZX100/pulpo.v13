@@ -11,12 +11,7 @@ module.exports = {
   permissions: [],
   enabled: true,
 	exec: async (client, message, args) => {
-		
-                var emcolor = [0]
-    if (message.guild) emcolor = message.guild.me.displayHexColor
-      
-    if (!message.guild) emcolor = client.config.colors.general
-    
+
     const invites = await message.guild.fetchInvites();
     const topTen = invites.filter((inv) => inv.uses > 0).sort((a, b) => b.uses - a.uses).first(10);
 
@@ -24,7 +19,7 @@ module.exports = {
 
     const inv = new Discord.MessageEmbed()
       .setTitle(`Top Invites in ${message.guild.name}`)
-      .setColor(emcolor)
+      .setColor(client.color)
       .setAuthor(message.guild.name, message.guild.iconURL())
       .setDescription(topTen.map((inv) => `• **${inv.inviter.username}**'s invite **${inv.code}** has **${inv.uses.toLocaleString()}** uses.`).join("\n"));
 message.channel.send(inv)

@@ -31,11 +31,6 @@ const flags = {
 	serverowner: '<:owner:775297887864225862>'
 };		
 
-                var emcolor = [0]
-    if (message.guild) emcolor = message.guild.me.displayHexColor
-      
-    if (!message.guild) emcolor = client.config.colors.general
-		
 function checkDays(date) {
         let now = new Date();
         let diff = now.getTime() - date.getTime();
@@ -68,7 +63,7 @@ if(persona.id == "689106697561702437") userFlags.push("uwu")
 if(persona.id == message.guild.owner.id) userFlags.push("serverowner")
 if(persona.user.bot == true) userFlags.push("bot")
 const embed2 = new Discord.MessageEmbed()
-.setColor(emcolor)
+.setColor(client.color)
 .setAuthor(persona.user.username, persona.user.avatarURL())
 .setTitle(`**${persona.user.username}\'s Info**`)
 .setThumbnail(persona.user.avatarURL({ format: 'png', dynamic: true, size: 2048 }))

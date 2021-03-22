@@ -90,7 +90,7 @@ let type = {
  
  //Primer mensaje del canal con link
     
-    .setColor(emcolor) //Color(?
+    .setColor(client.color) //Color(?
     
     message.channel.send(cha)
 
